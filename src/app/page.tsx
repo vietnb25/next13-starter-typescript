@@ -4,9 +4,21 @@ import x from '@/styles/app.module.css'
 import y from '@/styles/viet.module.css'
 import Table from 'react-bootstrap/Table';
 import TableContent from "./components/table";
+import { log } from "console";
+import { useEffect } from "react";
 
 
 export default function Home() {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('http://localhost:8000/blogs');
+      const data = await res.json();
+      console.log("tôi đai", data);
+    }
+    fetchData();
+  }, [])
+
   return (
     <div>
       <ul>
@@ -15,10 +27,10 @@ export default function Home() {
             <span className={y['red']}>Facebook</span></Link>
         </li>
         <li style={{ margin: "20px 0" }}>
-          <a href="/youtube">Youtube</a>
+          <Link href="/youtube">Youtube</Link>
         </li>
         <li>
-          <a href="/tiktok">Tiktok</a>
+          <Link href="/tiktok">Tiktok</Link>
         </li>
       </ul>
       <TableContent />
