@@ -1,6 +1,10 @@
+'use client'
 import Link from "next/link";
 import x from '@/styles/app.module.css'
 import y from '@/styles/viet.module.css'
+import Table from 'react-bootstrap/Table';
+import TableContent from "./components/table";
+
 
 export default function Home() {
   return (
@@ -17,6 +21,7 @@ export default function Home() {
           <a href="/tiktok">Tiktok</a>
         </li>
       </ul>
+      <TableContent />
     </div>
   )
 }

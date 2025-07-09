@@ -1,6 +1,11 @@
+'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Header from './components/header';
+import Footer from './components/footer';
+import TableContent from './components/table';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>Tôi đai</div>
-        {children}
+        <Header />
+        <Container>
+          {children}
+        </Container>
+        <Footer />
       </body>
     </html>
   )
