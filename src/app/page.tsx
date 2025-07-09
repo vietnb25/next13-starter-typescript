@@ -1,17 +1,20 @@
 import Link from "next/link";
+import x from '@/styles/app.module.css'
+import y from '@/styles/viet.module.css'
 
 export default function Home() {
   return (
     <div>
       <ul>
-        <li>
-          <Link href="/facebook">Facebook</Link>
+        <li className={x['red']}>
+          <Link href="/facebook">
+            <span className={y['red']}>Facebook</span></Link>
+        </li>
+        <li style={{ margin: "20px 0" }}>
+          <a href="/youtube">Youtube</a>
         </li>
         <li>
-          <Link href="/youtube">Youtube</Link>
-        </li>
-        <li>
-          <Link href="/tiktok">Tiktok</Link>
+          <a href="/tiktok">Tiktok</a>
         </li>
       </ul>
     </div>
